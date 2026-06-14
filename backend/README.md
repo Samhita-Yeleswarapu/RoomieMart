@@ -1,171 +1,166 @@
-RoomieMart – Feature Set
-1. Authentication & User Management
-Student registration
-Login/Logout
-College email verification
-Forgot password
-Profile management
-Profile picture upload
-2. Product Listings
-Add product
-Edit product
-Delete product
-Multiple image upload
-Product categories
-Product condition
-Original price & selling price
-Availability status (Available/Sold)
-3. Search & Filtering
-Search by keyword
-Filter by category
-Filter by price range
-Filter by condition
-Sort by newest, price low-high, price high-low
-4. Product Details Page
-Product images
-Seller details
-Product description
-Price
-Location/Hostel
-Contact seller button
-5. Wishlist
-Save products
-Remove from wishlist
-View saved products
-6. Real-Time Chat
-Buyer ↔ Seller messaging
-Chat history
-Online status
-Notifications
-7. Demand Board
+# RoomieMart — Backend
 
-Students can post:
+## Backend
+### Technologies Used
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Cloudinary
+- Multer
+- Socket.IO
+- dotenv
+- cookie-parser
+- CORS
 
-"Need Engineering Mathematics textbook"
+---
 
-Sellers can respond directly.
+# Project Structure
+```bash
+backend
+│
+├── config
+│   ├── cloudinary.js
+│   ├── db.js
+│
+├── controllers
+│   ├── aiController.js
+│   ├── chatController.js
+│   ├── demandController.js
+│   ├── notificationController.js
+│   ├── productController.js
+│   ├── rentalController.js
+│   ├── reportController.js
+│   ├── reviewController.js
+│   ├── userController.js
+│   └── wishlistController.js
+│
+├── middleware
+│   ├── isAdmin.js
+│   ├── uploadMiddleware.js
+│   └── verifyToken.js
+│
+├── models
+│   ├── ChatMessageModel.js
+│   ├── ChatModel.js
+│   ├── DemandModel.js
+│   ├── NotificationModel.js
+│   ├── PriceSuggestionModel.js
+│   ├── ProductModel.js
+│   ├── RentalModel.js
+│   ├── ReportModel.js
+│   ├── ReviewModel.js
+│   └── UserModel.js
+│
+├── routes
+│   ├── aiRoutes.js
+│   ├── chatRoutes.js
+│   ├── demandRoutes.js
+│   ├── notificationRoutes.js
+│   ├── productRoutes.js
+│   ├── rentalRoutes.js
+│   ├── reportRoutes.js
+│   ├── reviewRoutes.js
+│   ├── userRoutes.js
+│   └── wishlistRoutes.js
+│
+├── services
+│   ├── aiDescriptionService.js
+│   ├── aiPriceService.js
+│   └── aiScamDetectionService.js
+│
+├── sockets
+│   └── socketServer.js
+│
+├── uploads
+├── package.json
+├── server.js
+└── README.md
+```
 
-8. Barter/Exchange System
+---
 
-Instead of money:
+# Installation Steps
 
-Exchange Cycle ↔ Study Table
+## Step 1: Install Dependencies
+```bash
+npm install express mongoose mongodb cloudinary multer dotenv cookie-parser jsonwebtoken cors socket.io google-auth-library
+```
 
-Users can send exchange offers.
+---
 
-9. Rental Marketplace
+## Step 2: Create `.env` File
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
 
-Students can rent:
+---
 
-Calculators
-Lab coats
-Project kits
-Cameras
-Sports equipment
+## Step 3: Setup Cloudinary
+```bash
+https://cloudinary.com/
+```
+- Login or create an account on Cloudinary
+- Create a new project
+- Copy:
+  - Cloud Name
+  - API Key
+  - API Secret
+- Paste them into your `.env` file
 
-Rental duration + rental fee.
+---
 
-10. AI Features
-AI Product Description Generator
+## Step 4: Start the Server
+```bash
+node server.js
+```
 
-User enters:
+---
 
-Product name
-Condition
+# Deployment
 
-AI generates professional description.
+## Use Render for Backend Deployment
 
-AI Price Suggestion
+### Steps To Deploy
 
-Inputs:
+#### Step 1: Push Project to GitHub
+```bash
+git add .
+git commit -m "Initial Commit"
+git push origin main
+```
 
-Product type
-Age
-Condition
+---
 
-AI suggests a fair selling price.
+#### Step 2: Connect GitHub to Render
+- Login to Render
+- Click on **New Web Service**
+- Connect GitHub
+- Select your project repository
 
-AI Scam Detector
+---
 
-Checks:
+#### Step 3: Configure Render
+- Root Directory: `backend`
+- Instance Type: `Free`
 
-Unrealistic prices
-Spam descriptions
-Suspicious listings
+Build Command:
+```bash
+npm install
+```
 
-Flags risky posts.
+Start Command:
+```bash
+node server.js
+```
 
-11. Recommendation System
+---
 
-Suggest products based on:
-
-Search history
-Wishlist
-Categories viewed
-12. Sustainability Tracker
-
-Shows:
-
-Products reused
-Estimated waste reduced
-Sustainability points earned
-13. Ratings & Reviews
-Buyer rates seller
-Seller rating displayed
-Reviews after transaction
-14. Notifications
-New message
-Product sold
-Offer received
-Wishlist item price drop
-15. Admin Dashboard
-
-Admin can:
-
-Manage users
-Remove fake listings
-Handle reports
-View platform statistics
-Suggested Tech Stack
-Frontend
-React
-Vite
-Tailwind CSS
-Axios
-React Router
-Zustand
-Backend
-Node.js
-Express.js
-Database
-MongoDB
-Mongoose
-Authentication
-JWT
-Google Login (optional)
-Image Storage
-Cloudinary
-Real-Time Chat
-Socket.IO
-AI
-OpenAI API / Gemini API
-Deployment
-Frontend: Vercel
-Backend: Render
-Database: MongoDB Atlas
-Pages
-Landing Page
-Login
-Register
-Home Feed
-Product Details
-Add Product
-Edit Product
-My Listings
-Wishlist
-Demand Board
-Rentals
-Chat
-Profile
-Notifications
-Admin Dashboard
+#### Step 4: Deploy
+Click on **Deploy Web Service**
