@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+/* RoomieMart Brand Styling */
+
+.brand-text {
+  letter-spacing: -1px;
+  line-height: 1;
+  user-select: none;
+}
+
+.brand-r {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #081f5c;
+}
+
+.brand-oomie {
+  font-size: 1.9rem;
+  color: #081f5c;
+}
+
+.brand-m {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.brand-art {
+  font-size: 1.9rem;
+  color: #081f5c;
+}
+
+/* Navbar Hover Effects */
+
+.nav-link {
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+}
+
+/* Card Styling */
+
+.card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle Gradient Cards */
+
+.gradient-card {
+  background: linear-gradient(
+    135deg,
+    #eff6ff 0%,
+    #ffffff 100%
+  );
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

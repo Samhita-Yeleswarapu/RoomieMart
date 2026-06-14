@@ -1,0 +1,177 @@
+### ROOT
+GET http://localhost:5000
+
+###
+
+### REGISTER USER
+POST http://localhost:5000/user-api/register
+Content-Type: application/json
+
+{
+  "username": "Samhita",
+  "email": "samhita@gmail.com",
+  "password": "123456",
+  "college": "CBIT"
+}
+
+###
+
+### LOGIN USER
+POST http://localhost:5000/user-api/login
+Content-Type: application/json
+
+{
+  "email": "samhita@gmail.com",
+  "password": "123456"
+}
+
+###
+
+### GET CURRENT USER
+GET http://localhost:5000/user-api/current-user
+
+###
+  
+
+
+
+  ### CREATE PRODUCT
+POST http://localhost:5000/product-api
+Content-Type: application/json
+
+{
+  "title": "Engineering Mathematics Book",
+  "description": "First year engineering mathematics textbook",
+  "category": "Books",
+  "condition": "Good",
+  "originalPrice": 1000,
+  "sellingPrice": 500,
+  "location": "CBIT Hostel"
+}  
+
+
+### GET ALL PRODUCTS
+GET http://localhost:5000/product-api
+
+###
+
+### GET SINGLE PRODUCT
+GET http://localhost:5000/product-api/PRODUCT_ID
+
+###
+
+### CREATE DEMAND
+POST http://localhost:5000/demand-api
+Content-Type: application/json
+
+{
+  "title": "Need Engineering Drawing Kit",
+  "description": "Looking for a second-hand drawing kit."
+}
+
+###
+
+### GET DEMANDS
+GET http://localhost:5000/demand-api
+
+###
+
+### CREATE RENTAL
+POST http://localhost:5000/rental-api
+Content-Type: application/json
+
+{
+  "productId": "PRODUCT_ID",
+  "rentalPrice": 100,
+  "durationDays": 7
+}
+
+###
+
+### GET RENTALS
+GET http://localhost:5000/rental-api
+
+###
+
+### CREATE REVIEW
+POST http://localhost:5000/review-api
+Content-Type: application/json
+
+{
+  "sellerId": "SELLER_ID",
+  "rating": 5,
+  "review": "Great seller!"
+}
+
+###
+
+### GET REVIEWS
+GET http://localhost:5000/review-api/SELLER_ID
+
+###
+
+### CREATE BARTER REQUEST
+POST http://localhost:5000/barter-api
+Content-Type: application/json
+
+{
+  "requestedProductId": "PRODUCT_ID",
+  "offeredProductId": "PRODUCT_ID"
+}
+
+###
+
+### GET BARTERS
+GET http://localhost:5000/barter-api
+
+###
+
+### GET NOTIFICATIONS
+GET http://localhost:5000/notification-api
+
+###
+
+### CREATE REPORT
+POST http://localhost:5000/report-api
+Content-Type: application/json
+
+{
+  "productId": "PRODUCT_ID",
+  "reason": "Fake Product"
+}
+
+###
+
+### AI PRICE SUGGESTION
+POST http://localhost:5000/ai-api/price
+Content-Type: application/json
+
+{
+  "category": "Books",
+  "condition": "Good",
+  "originalPrice": 1000
+}
+
+###
+
+### AI DESCRIPTION
+POST http://localhost:5000/ai-api/description
+Content-Type: application/json
+
+{
+  "title": "Engineering Mathematics Book",
+  "condition": "Good"
+}
+
+###
+
+### AI SCAM CHECK
+POST http://localhost:5000/ai-api/scam-check
+Content-Type: application/json
+
+{
+  "title": "Laptop",
+  "description": "Pay first through crypto and I will ship later"
+}
+
+###
